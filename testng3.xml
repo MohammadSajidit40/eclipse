@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite  name="Suite">
+  <test thread-count="2" parallel="classes"  name="Test01">
+  <parameter name="Browser" value= "CHROME"></parameter>
+  <classes>
+      <class name="Testng.ActionEX"/>
+      <class name="Testng.BrowserEX"></class>
+ <!--     <class name="Testng.FramesEX"></class> -->
+      <class name="Testng.ClickandholdEX"></class>
+<!--     <class name="Testng.NavigationEX"></class>
+      <class name="Testng.ScrolingupdownEX"></class>
+      <class name="Testng.Testngprogram"></class> -->
+    </classes>
+ 
+  </test> <!-- Test -->
+ <test thread-count="2" parallel="classes"  name="Test02">
+ <parameter name="Browser" value= "EDGE"></parameter>
+  <classes>
+      <class name="Testng.ActionEX"/>
+      <class name="Testng.BrowserEX"></class>
+<!--      <class name="Testng.FramesEX"></class> -->
+      <class name="Testng.ClickandholdEX"></class>
+<!--      <class name="Testng.NavigationEX"></class>
+      <class name="Testng.ScrolingupdownEX"></class>
+      <class name="Testng.Testngprogram"></class> -->
+    </classes>
+ 
+  </test> <!-- Test -->
+  
+<!--->(TestNG_Editor)
+@Test(description = "ActionEX_WDM_nill",groups = {"Smoke/Regresstion/Sanitory Test"})
+	//( priority = 3, invocationCount = 9, enabled = true,groups = {"Smoke/Regresstion/Sanitory Test"})
+	public void actionEX() {     -->
+	
+<!---> (TestNG_XML file)
+<suite name="package name" thread-count="2" parallel="Tests name">
+<test thread-count="5" parallel="classes"  name="Test">
+<groups>
+<run><exclude name=" test"></exclude></run>
+</groups>
+<packages>
+<package>
+</package name="Package Name"> </package>
+</packages>
+<class thread-count="2" parallel="methods" name= "methods">
+<methods><exclude name=""></exclude></methods>
+</class>
+</test>
+</suite>
+-->
+
+<!--->(@parameter)
+____________________(Test.xml file)___________________
+<parameter name="Browser" value= "CHROME/EDGE/FIREFOX"></parameter>
+
+___________________(test script_editor)_______________
+@parameter (value={"Browser"})
+public void launch browser(string brName){
+if (brName.equalIgnoreCase("chrome")){
+  webdriverManager.chromedriver().setup();
+  driver =new Chromedriver();
+else if (brName.equalIgnoreCase("edge")){
+  webdriverManager.edgedriver().setup();
+  driver =new edgedriver();
+else if (brName.equalIgnoreCase("firefox")){
+  webdriverManager.firefoxdriver().setup();
+  driver =new firefoxdriver();
+  
+-->
+
+</suite> <!-- Suite -->
